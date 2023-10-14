@@ -21,6 +21,7 @@ namespace HW4Task3
             // Ввод пользователем числа
             while (true) 
             {
+                Console.Write("Введите число: ");
                 ConsoleKeyInfo userNumb = Console.ReadKey();
 
                 if (userNumb.Key == ConsoleKey.Enter)
