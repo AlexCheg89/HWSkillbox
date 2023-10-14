@@ -43,6 +43,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Module7", "Module7", "{4BED
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HW7Task", "HW7Task\HW7Task.csproj", "{65CF0534-C62F-4484-B913-CF0EF869A68B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Module8", "Module8", "{F4643B4B-E227-4B1F-902E-6A89879B03DC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
