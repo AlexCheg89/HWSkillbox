@@ -1,6 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace HW2Task1
+namespace HW2Task2
 {
     internal class Program
     {
@@ -21,6 +25,24 @@ namespace HW2Task1
             Console.WriteLine($"Баллы по физике: {physics_score,15}");  // Вывод балла по физике
 
             Console.ReadKey();
+
+            Console.WriteLine("____________________________________________________________________");
+
+            float sum_score = progarmming_score + math_score + physics_score;
+
+            string sum_scoreFormated = sum_score.ToString("##.##");
+            Console.WriteLine($"Сумма баллов: {sum_scoreFormated,19}"); // Вывод суммы баллов
+
+            Console.ReadKey();
+
+            Console.WriteLine("____________________________________________________________________");
+
+            float average_score = sum_score / 3;
+            string average_scoreFormated = average_score.ToString("##.##");
+            Console.WriteLine($"Средний балл: {average_scoreFormated,19}"); // Вывод среднего балла
+
+            Console.ReadKey();
+
         }
     }
 }
