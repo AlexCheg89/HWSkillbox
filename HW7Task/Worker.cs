@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HW7Task
 {
-    internal class Worker
+    internal struct Worker
     {
         #region Поля
 
@@ -123,7 +123,7 @@ namespace HW7Task
         //{
         //    Program pr = new Program();
 
-        //    return
+        //    return;
         //}
     }
 }
