@@ -4,15 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HWTask1
+namespace HWTask2
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!!!"); // Вывод текста в консоль
-
-            Console.ReadKey();
         }
     }
 }
