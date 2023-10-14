@@ -9,8 +9,8 @@ namespace HW8Task1
         /// <summary>
         /// Заполнение листа случайными числами от 0 до 100
         /// </summary>
-        /// <param name="number"></param>
-        /// <param name="lengthList"></param>
+        /// <param name="number">Коллекция чисел</param>
+        /// <param name="lengthList">Количество чисел для заполнения</param>
         static void EnterList(List<int> number, int lengthList)
         {
             Random r = new Random();
@@ -21,27 +21,29 @@ namespace HW8Task1
         }
 
         /// <summary>
-        /// Выход коллекции на экран
+        /// Вывод коллекции на экран
         /// </summary>
-        /// <param name="number"></param>
+        /// <param name="number">Коллекция для вывода на экран</param>
         static void OutputList(List<int> number)
         {
+
             foreach (var item in number)
             {
-                Console.WriteLine($"{item} ");
+                Console.Write($"{item} ");
             }
-
             Console.WriteLine();
+            //Console.WriteLine($"Количество элементов: {number.Count}");
+            //Console.WriteLine("\n");
         }
 
         /// <summary>
         /// Удаление из листа числа, которые больше 25, но меньше 50 
         /// </summary>
-        /// <param name="tempNumber"></param>
-        /// <returns></returns>
-        static List<int> DeleteCorentNumberOfList(List<int> tempNumber) 
+        /// <param name="tempNumber">Коллекция чисел</param>
+        /// <returns>Возвращает Коллекцию чисел после удаления</returns>
+        static List<int> DeleteCorentNumberOfList(List<int> tempNumber)
         {
-            for (int i = 0;i < tempNumber.Count; i++) 
+            for (int i = 0; i < tempNumber.Count; i++)
             {
                 if (tempNumber[i] > 25 && tempNumber[i] < 50)
                 {
@@ -54,23 +56,26 @@ namespace HW8Task1
 
         static void Main(string[] args)
         {
-            // Cоздание листа целых чисел.
+            // Создание листа целых чисел.
             List<int> number = new List<int>();
 
-            // Заполнение листа 100 случайными числами в диапазоне от 0 до 100.
+            // Заполните листа 100 случайными числами в диапозоне от 0 до 100.
             int lengthList = 100;
 
             EnterList(number, lengthList);
 
             // Вывод коллекции чисел на экран.
-            Console.WriteLine("Заполненный лист из целых чисел:");
+            Console.WriteLine("Заполненный лист из целлых чисел:");
             OutputList(number);
 
-            // Удаленпие из листа чисел, которые больше 25, но меньше 50.
-            Console.WriteLine("Лист целых числе после удаления значений больше 25 и меньше 50:");
+            // Удаления из листа числа, которые больше 25, но меньше 50.
+
+            Console.WriteLine("Лист целых чисел после удаления значений которые больше 25 и меньше 50:");
+
             OutputList(DeleteCorentNumberOfList(number));
 
             Console.ReadKey();
+
         }
     }
 }
