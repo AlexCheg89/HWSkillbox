@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HW2Task1", "HWTask2\HWTask1
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HW2Task2", "HWTask2\HW2Task2\HW2Task2.csproj", "{BAED0C2A-6B9F-4F8F-8A45-818CDB4126B3}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Module3", "Module3", "{BA4802DD-8DE8-4833-A67E-2619D7BD9CD7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
