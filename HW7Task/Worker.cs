@@ -93,7 +93,7 @@ namespace HW7Task
 
         public string Print()
         {
-            return $"{ID} {dateOfBirth} {Fio} {Age} {Height} {DateOfBirth} {PlaceOfBirth}";
+            return $"{ID} {dateOfRecord} {Fio} {Age} {Height} {DateOfBirth} {PlaceOfBirth}";
         }
 
         public uint GetAge(DateTime today, string birthday)
