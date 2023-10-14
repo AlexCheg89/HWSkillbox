@@ -101,32 +101,111 @@ namespace HW7Task
                         break;
                     case '2':
                         worker = StaffRead(file);
-                        OutputToConsole(worker);
+                        uint zap = 0;
+                        Console.Write($"Какую запись хотите вывести: ");
+                        zap = Convert.ToUInt32(Console.ReadLine());
+                        Console.WriteLine(worker.Find(item=>item.ID== zap).Print());
+
                         break;
+
                     case '3':
-                        worker = StaffRead(file);
-                        OutputToConsole(worker);
+                        wk.Enter();
+                        worker.Add(new Worker(wk.ID, wk.DateOfRecord, wk.Fio, wk.Age, wk.Height, wk.DateOfBirth, wk.PlaceOfBirth));
+                        StaffWrite(file, wk);
+                        
                         break;
+
                     case '4':
                         worker = StaffRead(file);
+                        Console.Write($"Какую запись хотите удалить: ");
+                        zap = Convert.ToUInt32(Console.ReadLine());
+                        int delRecord = worker.FindIndex(item=>item.ID == zap);
+                        worker.RemoveAt(delRecord);
                         OutputToConsole(worker);
+                        StaffWrite(file, wk);
+
                         break;
+
                     case '5':
                         worker = StaffRead(file);
+                        Console.Write($"Какую запись хотите редактировать: ");
+                        zap = Convert.ToUInt32(Console.ReadLine());
+                        int record = worker.FindIndex(item=> item.ID == zap);
+                        Console.WriteLine($"Индекс записи: {record}");
+                        wk.Enter();
+                        worker[record] = new Worker(wk.ID, wk.DateOfRecord, wk.Fio, wk.Age, wk.Height, wk.DateOfBirth, wk.PlaceOfBirth);
                         OutputToConsole(worker);
+                        StaffWrite(file, wk);
+
                         break;
+                       
                     case '6':
                         worker = StaffRead(file);
-                        OutputToConsole(worker);
+                        Console.Write($"Введите начальную дату: ");
+                        DateTime startDate = Convert.ToDateTime(Console.ReadLine());
+                        Console.WriteLine($"Начальна дата: {startDate}");
+                        Console.Write($"Введите конечную дату: ");
+                        DateTime endDate = Convert.ToDateTime(Console.ReadLine());
+                        Console.WriteLine($"Конечная дата: {endDate}");
+
+                        for (int i = 0; i < worker.Count; i++)
+                        {
+                            if (worker[i].DateOfRecord >= startDate && worker[i].DateOfRecord <= endDate)
+                            {
+                                Console.WriteLine(worker[i].Print());
+                            }
+                        }
+                     
                         break;
+
                     case '7':
                         worker = StaffRead(file);
-                        OutputToConsole(worker);
+                        char sortMode = '0';
+                        Console.WriteLine($"1. Сортировка по возрастанию даты");
+                        Console.WriteLine($"2. Сортировка по убыванию даты");
+                        sortMode = Convert.ToChar(Console.ReadLine());
+
+                        switch (sortMode)
+                        {
+                            case '1':
+                                worker.Sort(delegate (Worker worker1, Worker worker2)
+                                {
+                                    return worker2.DateOfRecord.CompareTo(worker1.DateOfRecord);
+                                });
+                                OutputToConsole(worker);
+
+                                break;
+
+                            case '2':
+                                worker.Sort(delegate (Worker worker1, Worker worker2)
+                                {
+                                    return worker2.DateOfRecord.CompareTo(worker1.DateOfRecord);
+                                });
+                                OutputToConsole(worker);
+
+                                break;
+
+                            default:
+                                Console.WriteLine("Введите корректное значение");
+
+                                break;
+                        }
+                        
+                        break;
+
+                    default:
+                        Console.WriteLine("Введите корректное значение");
+
                         break;
 
                 }
 
-            } while (true);
+                Console.Write($"Вернуться в меню д/н: ");
+                mode = Convert.ToChar(Console.ReadLine());
+
+            } while (mode == 'д');
+
+            Console.ReadKey();
 
         }
     }
