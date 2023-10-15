@@ -6,7 +6,21 @@
         xmlns:local="clr-namespace:HW9Task"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+
+    <Grid ShowGridLines="True">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="29*"/>
+            <ColumnDefinition Width="21*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Button x:Name="btnStringToWord" Content="Разбить на слова" HorizontalAlignment="Left" Margin="10,42,0,0" VerticalAlignment="Top" IsCancel="True" Click="btnStringToWord_Click" Grid.Column="1"/>
+        <Button x:Name="btnRewers" Content="Изменить порядок" HorizontalAlignment="Left" Margin="10,44,0,0" Grid.Row="1" VerticalAlignment="Top" Grid.Column="1" Click="button_Click"/>
+        <TextBox x:Name="textEnter" Grid.Column="1" Margin="5,5,5,5" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top"/>
+        <ListBox x:Name="listBox" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="5"/>
+        <TextBox x:Name="textBox" Margin="5,5,5,5" Padding="10" Grid.Row="1" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top"/>
+        <Label x:Name="label" Grid.Column="1" Content="Label" Margin="5,5,5,5" Grid.Row="1" VerticalAlignment="Top"/>
     </Grid>
 </Window>

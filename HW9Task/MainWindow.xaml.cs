@@ -20,9 +20,51 @@ namespace HW9Task
     /// </summary>
     public partial class MainWindow : Window
     {
+        /// <summary>
+        /// Разделение по словам
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns></returns>
+        static string[] StringToWord(string text)
+        {
+            string[] words = text.Split(' ');
+
+            return words;
+        }
+
+        /// <summary>
+        /// Изменение порядка слов
+        /// </summary>
+        /// <param name="text"></param>
+        static string[] RewersWords (string text) 
+        {
+            string[] new_text = StringToWord(text);
+
+            string[] revers_text = null;
+
+            for (int i = new_text.Length -1;  i >= 0; i--)
+            {
+                revers_text[i] = new_text[i];
+                //Console.Write($"{new_text[i]} ");
+            }
+            return revers_text;
+        }
+
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void btnStringToWord_Click(object sender, RoutedEventArgs e)
+        {
+            var enteringString = StringToWord(textEnter.ToString());
+
+            
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
