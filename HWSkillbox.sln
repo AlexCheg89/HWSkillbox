@@ -53,6 +53,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HW8Task3", "HW8Task3\HW8Tas
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HW8Task4", "HW8Task4\HW8Task4.csproj", "{0FF4C388-3A59-4993-842C-387F3783202A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Module9", "Module9", "{67D67FAC-3A46-4CA8-97EB-38F742D8FB89}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
