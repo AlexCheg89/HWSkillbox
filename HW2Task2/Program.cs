@@ -42,7 +42,7 @@ namespace HW2Task2
 
         static void OutputToConsole(Dictionary<string, string> phoneBook)
         {
-            foreach (KeyValuePair<string, string> e in phoneBook) Console.WriteLine($"{e} );
+            foreach (KeyValuePair<string, string> e in phoneBook) Console.WriteLine($"{e} ");
         }
 
         static void Main(string[] args)
