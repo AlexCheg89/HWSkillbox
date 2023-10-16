@@ -1,4 +1,5 @@
 .modal {
+  --transition-time: 0.3s;
   position: fixed;
   left: 0;
   top: 0;
@@ -12,7 +13,7 @@
   text-align: center;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s, visibility 0.3s;
+  transition: opacity var(--transition-time), visibility var(--transition-time);
 }
 
 .modal::before {
@@ -43,7 +44,7 @@
 .modal.is-open {
   opacity: 1;
   visibility: visible;
-  transition: opacity 0.3s, visibility 0.3s;
+  transition: opacity var(--transition-time), visibility var(--transition-time);
 }
 
 .modal__container.modal-open {
@@ -52,10 +53,10 @@
 
 .fade {
   opacity: 0;
-  transition: opacity 0.3s;
+  transition: opacity var(--transition-time);
 }
 
 .fade.animate-open {
   opacity: 1;
-  transition: opacity 0.3s;
+  transition: opacity var(--transition-time);
 }
