@@ -1,79 +1,202 @@
-.modal {
-  --transition-time: 0.3s;
-  position: fixed;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 1000;
-  background-color: rgba(0, 0, 0, .5);
-  cursor: pointer;
-  overflow-y: auto;
-  overflow-x: hidden;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.work {
+  padding: 110px 0;
+}
+
+ul, li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.work__title {
+  margin-bottom: 60px;
+  font-size: 54px;
+  font-weight: 700;
+  color: #555555;
   text-align: center;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity var(--transition-time), visibility var(--transition-time);
+}
+
+.work__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.work__item {
+  flex-grow: 1;
+  width: 30%;
+  cursor: pointer;
+
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: box-shadow 0.2s linear;
+}
+.work__img-block {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+.work__item-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.work__content {
+  padding: 20px;
+}
+.work__item-title {
+}
+
+
+.modal {
+	--transition-time: 0.3s;
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 1000;
+	background-color: rgba(0,0,0, 0.5);
+	cursor: pointer;
+	overflow-y: auto;
+	overflow-x: hidden;
+	text-align: center;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity var(--transition-time), visibility var(--transition-time);
 }
 
 .modal::before {
-  content: "";
-  display: inline-block;
-  vertical-align: middle;
-  height: 100%;
+	content: '';
+	display: inline-block;
+	vertical-align: middle;
+	height: 100%;
 }
 
 .modal__container {
-  position: relative;
-  width: 1000px;
-  margin: 50px auto;
-  display: none;
-  vertical-align: middle;
-  background: #fff;
-  border-radius: 20px;
-  cursor: default;
-  text-align: left;
+	position: relative;
+	width: 1000px;
+  height: 90vh;
+	margin: 50px auto;
+	display: none;
+	vertical-align: middle;
+	background-color: #fff;
+	border-radius: 20px;
+	cursor: default;
+	text-align: left;
+  overflow: hidden;
 }
 
 @media (max-width: 1024px) {
-  .modal__container {
-    width: 90%;
-  }  
+	.modal__container {
+		width: 90%;
+	}
 }
 
 .modal.is-open {
-  opacity: 1;
-  visibility: visible;
-  transition: opacity var(--transition-time), visibility var(--transition-time);
+	opacity: 1;
+	visibility: visible;
+	transition: opacity var(--transition-time), visibility var(--transition-time);
 }
 
 .modal__container.modal-open {
-  display: inline-block;
+	display: inline-block;
 }
 
 .fade {
-  opacity: 0;
-  transition: opacity var(--transition-time);
+	opacity: 0;
+	transition: opacity var(--transition-time);
 }
 
 .fade.animate-open {
-  opacity: 1;
-  transition: opacity var(--transition-time);
+	opacity: 1;
+	transition: opacity var(--transition-time);
 }
 
-*:focus {
-  outline: 3px red solid;
+.fadeInUp {
+	opacity: 0;
+	transform: translateY(-100px);
+	transition: opacity var(--transition-time), transform var(--transition-time);
 }
+
+.fadeInUp.animate-open {
+	opacity: 1;
+	transform: translateY(0);
+	transition: opacity var(--transition-time), transform var(--transition-time);
+}
+
+/* *:focus {
+	outline: 3px red solid;
+} */
+
 .content {
-  min-height: 200vh;
+	min-height: 200vh;
 }
 
 .disable-scroll {
-  position: relative;
-  overflow: hidden;
-  height: 100vh;
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
+	position: relative;
+	overflow: hidden;
+	height: 100vh;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+}
+
+.modal-content {
+  display: flex;
+}
+
+.modal__img-block {
+  width: 60%;
+  line-height: 0;
+}
+
+.modal__info {
+  width: 40%;
+  padding: 30px 15px;
+}
+.modal__title {
+  font-size: 25px;
+  margin-bottom: 15px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+
+.modal-close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 30px;
+  height: 30px;
+  background: none;
+  border: none;
+  transition: rotate(45deg) 0.2s linear;
+}
+
+.modal-close:hover {
+  rotate: 45deg;
 }
