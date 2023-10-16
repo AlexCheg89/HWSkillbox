@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
 * {
   box-sizing: border-box;
@@ -86,6 +87,24 @@ img {
 	opacity: 0;
 	visibility: hidden;
 	transition: opacity var(--transition-time), visibility var(--transition-time);
+=======
+.modal {
+  --transition-time: 0.3s;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, .5);
+  cursor: pointer;
+  overflow-y: auto;
+  overflow-x: hidden;
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-time), visibility var(--transition-time);
+>>>>>>> 0bf70abb69fb7c51a42897efd0dea00c61ca7ca0
 }
 
 .modal::before {
@@ -116,9 +135,15 @@ img {
 }
 
 .modal.is-open {
+<<<<<<< HEAD
 	opacity: 1;
 	visibility: visible;
 	transition: opacity var(--transition-time), visibility var(--transition-time);
+=======
+  opacity: 1;
+  visibility: visible;
+  transition: opacity var(--transition-time), visibility var(--transition-time);
+>>>>>>> 0bf70abb69fb7c51a42897efd0dea00c61ca7ca0
 }
 
 .modal__container.modal-open {
@@ -126,6 +151,7 @@ img {
 }
 
 .fade {
+<<<<<<< HEAD
 	opacity: 0;
 	transition: opacity var(--transition-time);
 }
@@ -200,3 +226,13 @@ img {
 .modal-close:hover {
   rotate: 45deg;
 }
+=======
+  opacity: 0;
+  transition: opacity var(--transition-time);
+}
+
+.fade.animate-open {
+  opacity: 1;
+  transition: opacity var(--transition-time);
+}
+>>>>>>> 0bf70abb69fb7c51a42897efd0dea00c61ca7ca0
