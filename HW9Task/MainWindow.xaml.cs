@@ -36,18 +36,19 @@ namespace HW9Task
         /// Изменение порядка слов
         /// </summary>
         /// <param name="text"></param>
-        static string[] RewersWords (string text) 
+        static string RewersWords (string text) 
         {
             string[] new_text = StringToWord(text);
 
-            string[] revers_text = null;
+            string result = null;
 
             for (int i = new_text.Length -1;  i >= 0; i--)
             {
-                revers_text[i] = new_text[i];
-                //Console.Write($"{new_text[i]} ");
+                result += $"{new_text[i]} ";
             }
-            return revers_text;
+
+            return result;
+
         }
 
         public MainWindow()
@@ -57,7 +58,8 @@ namespace HW9Task
 
         private void btnStringToWord_Click(object sender, RoutedEventArgs e)
         {
-            var enteringString = StringToWord(textEnter.ToString());
+            var wors = StringToWord(textBoxDelim.Text);
+            listBoxDelim.ItemsSour
 
             
         }
