@@ -29,14 +29,14 @@
                     <RowDefinition Height="20*"/>
                 </Grid.RowDefinitions>
                 <TextBox
-                    x:Name="textBoxDelimer"
+                    x:Name="textBoxDelim"
                     Grid.Column="0"
                     Grid.Row="0"
                     Text="Введите текст"
                     FontSize="20"
                     Margin="5"
                     Padding="10 5 10 5"
-                    
+                    TextWrapping="Wrap" GotMouseCapture="textBoxDelim_GotMouseCapture"
                     />
                 <Button
                     x:Name="btnDelim"
@@ -44,19 +44,55 @@
                     Grid.Row="1"
                     Margin="100 5 100 5"
                     FontSize="20"
-                    Background="AntiqueWhite" Click="btnDelim_Click" VerticalAlignment="Center">Разбить текст</Button>
-                <ListBox
+                    Background="AntiqueWhite" Click="btnDelim_Click" VerticalAlignment="Center" >Разбить текст</Button>
+                <ListBox 
                     x:Name="listBoxDelim"
-                    Grid.Column="1"
-                    Grid.Row="0"
+                    Grid.Column="1" 
+                    Grid.Row="0" 
                     Margin="5"></ListBox>
             </Grid>
-         </Border>
-            <Button x:Name="btnStringToWord" Content="Разбить на слова" HorizontalAlignment="Left" Margin="10,42,0,0" VerticalAlignment="Top" IsCancel="True" Click="btnStringToWord_Click" Grid.Column="1"/>
-        <Button x:Name="btnRewers" Content="Изменить порядок" HorizontalAlignment="Left" Margin="10,44,0,0" Grid.Row="1" VerticalAlignment="Top" Grid.Column="1" Click="button_Click"/>
-        
-        <ListBox x:Name="listBox" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="5"/>
-        <TextBox x:Name="textBox" Margin="5,5,5,5" Padding="10" Grid.Row="1" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top"/>
-        <Label x:Name="label" Grid.Column="1" Content="Label" Margin="5,5,5,5" Grid.Row="1" VerticalAlignment="Top"/>
+        </Border>
+
+        <Border BorderBrush="Black"
+                Margin="5"
+                CornerRadius="10"
+                Grid.Column="0" Grid.Row="1" Background="AliceBlue"
+                BorderThickness="1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="80*"/>
+                    <RowDefinition Height="20*"/>
+                </Grid.RowDefinitions>
+                <TextBox
+                    x:Name="textBoxRewerse"
+                    Grid.Column="0"
+                    Grid.Row="0"
+                    Text="Введите текст"
+                    FontSize="20"
+                    Margin="5"
+                    Padding="10 5 10 5"
+                    TextWrapping="Wrap" GotMouseCapture="textBoxRewerse_GotMouseCapture"
+/>
+                <Button 
+                    x:Name="btnRewerse"
+                    Grid.ColumnSpan="2"
+                    Grid.Row="1"
+                    Margin="100 5 100 5"
+                    FontSize="20"
+                    Background="AntiqueWhite" Click="btnRewerse_Click">Обратный порядок</Button>
+                <Label
+                    x:Name="labelRewerse"
+                    FontSize="20"
+                    Grid.Column="1"
+                    Grid.Row="0"
+                    Margin="5"
+                    Background="White" OpacityMask="Black"></Label>
+            </Grid>
+        </Border>
+
     </Grid>
 </Window>

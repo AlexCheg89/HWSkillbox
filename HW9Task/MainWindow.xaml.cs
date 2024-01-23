@@ -56,17 +56,28 @@ namespace HW9Task
             InitializeComponent();
         }
 
-        private void btnStringToWord_Click(object sender, RoutedEventArgs e)
+        private void btnDelim_Click(object sender, RoutedEventArgs e)
         {
             var wors = StringToWord(textBoxDelim.Text);
-            listBoxDelim.ItemsSour
-
-            
+            listBoxDelim.ItemsSource = wors;
+            listBoxDelim.Items.Refresh();            
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
+        private void btnRewerse_Click(object sender, RoutedEventArgs e)
         {
+            var text = RewersWords(textBoxRewerse.Text);
 
+            labelRewerse.Content = text;
+        }
+
+        private void textBoxDelim_GotMouseCapture(object sender, MouseEventArgs e) 
+        {
+            textBoxDelim.Clear();
+        }
+
+        private void textBoxRewerse_GotMouseCapture(object sender, MouseEventArgs e)
+        {
+            textBoxRewerse.Clear();
         }
     }
 }
