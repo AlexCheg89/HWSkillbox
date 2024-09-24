@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace HW10Task
 {
-    internal class Account
+    internal class Account : IChange<Account>
     {
         public int Id { get; set; }
 
@@ -50,6 +50,15 @@ namespace HW10Task
                 return $"{this.Id}{sep}{this.Surname}{sep}{this.FirstName}{sep}{this.Patronymic}{sep}{this.PhoneNumber}{sep}{this._passport}{sep}{TimeDataChange}" +
                     $"{sep}{Changes}{sep}{TypeChange}{sep}{WhoChange}";
             }
+        }
+
+        public Account Changing(string newValue, Account selectedAcc, int trigger)
+        {
+            selectedAcc.PhoneNumber = newValue;
+            selectedAcc.TimeDataChange = DateTime.Now;
+            selectedAcc.TypeChange = "изменение Phonenumber";
+            selectedAcc.WhoChange = "Консультант";
+            return selectedAcc;
         }
     }
 }

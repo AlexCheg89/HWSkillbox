@@ -20,11 +20,18 @@ namespace HW10Task
     /// </summary>
     public partial class MainWindow : Window
     {
+        Manager acc;
+        Manager selectedAcc;
+        List<Manager> accounts;
         bool flag;
 
         public MainWindow()
         {
+            acc = new Manager();
+            accounts = acc.Read();
             InitializeComponent();
+            ListView.ItemsSource = accounts;
+            ComboBox.SelectedIndex = 0;
         }
 
         /// <summary>
@@ -34,12 +41,30 @@ namespace HW10Task
         /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (selectedAcc=null)
+            //if (selectedAcc=null)
         }
 
+
+        /// <summary>
+        /// Добавление нового аккуанта
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonAdd_Click(object sender, RoutedEventArgs e)
         {
-
+            if (BoxAdd1.Text != "" && BoxAdd2.Text != "" && BoxAdd3.Text != "" && BoxAdd4.Text != "" && BoxAdd5.Text != "")
+            {
+                Manager accAdd = new Manager(accounts.Count, BoxAdd1.Text, BoxAdd2.Text, BoxAdd3.Text, BoxAdd4.Text, BoxAdd5.Text);
+                accounts.Add(accAdd);
+                accAdd.Write(accounts);
+                ListView.Items.Refresh();
+                BoxAdd1.Clear();
+                BoxAdd2.Clear();
+                BoxAdd3.Clear();
+                BoxAdd4.Clear();
+                BoxAdd5.Clear();
+            }
+            else MessageBox.Show("Не все данные заполнены");
         }
 
         private void rbPassport_Unchecked(object sender, RoutedEventArgs e)
