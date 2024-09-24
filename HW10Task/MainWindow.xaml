@@ -16,7 +16,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <ListView>
+        <ListView x:Name="ListView" Margin="5,37,5,10" Grid.RowSpan="2">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Фамилия" Width="120"/>
@@ -30,6 +30,31 @@
 
         <Grid Grid.Column="1" Margin="0,0,0,10" Grid.RowSpan="2" Background="#dbd7d2">
             <Button Content="Изменить данные" HorizontalAlignment="Left" Margin="142,192,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+            <TextBox x:Name="TextBox" HorizontalAlignment="Left" Margin="10,193,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="18"/>
+            <RadioButton x:Name="rbSurname" Content="Фамилия" Background="LightGray" GroupName="rb" HorizontalAlignment="Left" Margin="10,42,0,0" VerticalAlignment="Top"/>
+            <RadioButton x:Name="rbFirstName" Content="Имя" Background="LightGray" GroupName="rb" HorizontalAlignment="Left" Margin="10,63,0,0" VerticalAlignment="Top"/>
+            <RadioButton x:Name="rbPatronymic" Content="Отчество" Background="LightGray" GroupName="rb" HorizontalAlignment="Left" Margin="10,84,0,0" VerticalAlignment="Top"/>
+            <RadioButton x:Name="rbPhoneNumber" Content="Номер телефона" Background="LightGray" GroupName="rb" HorizontalAlignment="Left" Margin="10,105,0,0" VerticalAlignment="Top"/>
+            <RadioButton x:Name="rbPassword" Content="Паспорт" Background="LightGray" GroupName="rb" HorizontalAlignment="Left" Margin="10,126,0,0" VerticalAlignment="Top" Unchecked="rbPassport_Unchecked" Checked="rbPassport_Checked" IsChecked="False"/>
+            <TextBox x:Name="BoxAdd1" HorizontalAlignment="Left" Margin="129,40,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Height="18"/>
+            <TextBox x:Name="BoxAdd2" HorizontalAlignment="Left" Margin="129,61,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Height="18"/>
+            <TextBox x:Name="BoxAdd3" HorizontalAlignment="Left" Margin="129,82,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Height="18"/>
+            <TextBox x:Name="BoxAdd4" HorizontalAlignment="Left" Margin="129,103,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Height="18"/>
+            <TextBox x:Name="BoxAdd5" HorizontalAlignment="Left" Margin="129,124,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" Height="18"/>
+            <Button x:Name="ButtonAdd" Content="Добавить пользователя" Margin="10,147,10,0" VerticalAlignment="Top" Click="ButtonAdd_Click" Height="20"/>
         </Grid>
+        <ComboBox x:Name="ComboBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="5,10,0,0" SelectionChanged="ComboBox_SelectionChanged">
+            <ComboBoxItem Content="Консультант"/>
+            <ComboBoxItem Content="Менеджер"/>
+        </ComboBox>
+        <TextBox x:Name="txt1" HorizontalAlignment="Left" Margin="10,47,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txt2" HorizontalAlignment="Left" Margin="179,47,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txt3" HorizontalAlignment="Left" Margin="359,47,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="223"/>
+        <TextBox x:Name="txt4" HorizontalAlignment="Left" Margin="0,47,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="21,26,0,0" Grid.Row="2" TextWrapping="Wrap" Text="Время изменения" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="181,26,0,0" Grid.Row="2" TextWrapping="Wrap" Text="Измененные данные" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="429,26,0,0" Grid.Row="2" TextWrapping="Wrap" Text="Тип изменения" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="25,26,0,0" Grid.Row="2" TextWrapping="Wrap" Text="Кто изменил" VerticalAlignment="Top" Grid.Column="1"/>
+        <Button x:Name="ButtonSort" Content="Сортировать" HorizontalAlignment="Left" Margin="544,139,0,0" VerticalAlignment="Top" Click="ButtonSort_Click" Grid.RowSpan="2" Grid.Row="1" Width="83"/>
     </Grid>
 </Window>

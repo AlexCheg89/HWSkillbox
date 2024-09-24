@@ -20,12 +20,44 @@ namespace HW10Task
     /// </summary>
     public partial class MainWindow : Window
     {
+        bool flag;
+
         public MainWindow()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Кнопка для изменения данных
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (selectedAcc=null)
+        }
+
+        private void ButtonAdd_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void rbPassport_Unchecked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void rbPassport_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void ButtonSort_Click(object sender, RoutedEventArgs e)
         {
 
         }
